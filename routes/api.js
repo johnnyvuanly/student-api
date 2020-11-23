@@ -6,7 +6,7 @@ let Student = db.Student
 let router = express.Router() // A router is when something that matches request to functions that can respond to them
 
 router.get('/students', function(req, res, next){
-    Student.findAll( {order: ['name'] }).then( students => { // We want to find all of our students and that returns a promise so we use then
+    Student.findAll( {order: ['StarID'] }).then( students => { // We want to find all of our students and that returns a promise so we use then
         return res.json(students) // This route is sending a status code of 200
     }).catch( err => next(err))
 })

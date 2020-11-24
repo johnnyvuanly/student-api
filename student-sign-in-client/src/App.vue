@@ -46,13 +46,13 @@ export default {
     studentArrivedOrLeft(student) {
       this.$student_api.updateStudent(student).then( () => {
         this.name = student.name
-        this.message = student.present ? 'Welcome, ' : 'Goodbye, '
+        this.mostRecentStudent = student
         this.updateStudents()
       })
     },
     deleteStudent(student) {
       this.$student_api.deleteStudent(student).then( () => {
-        this.updateStudents
+        this.updateStudents()
       })
     },
     updateStudents() { // This is going to call our method in the new StudentService.js

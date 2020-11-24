@@ -16,7 +16,7 @@ module.exports = (sequelize, DataTypes) => { // module.exports is a function or 
         }
     })
     // Changed force to false which will stop our table from being dropped and recreated it next time we start the app up
-    Student.sync( {force: false} ).then( () => { // this returns a promise that's why we use then
+    Student.sync( {force: true} ).then( () => { // this returns a promise that's why we use then
         console.log('Synced student table ')
     }) 
 
